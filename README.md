@@ -1,3 +1,4 @@
-# BLACK JACK PROJECT
+# BLACKJACK PROJECT
 
-Week Three - Skill Distillery Project
+## Week Three - Skill Distillery Project
+### Andy Wynyard
