@@ -6,16 +6,16 @@ import java.util.List;
 
 public class Deck {
 	List<Card> deck;
-	
-	public Deck(){
+
+	public Deck() {
 		createDeck();
 	}
-	
+
 	public void shuffleDeck() {
 		Collections.shuffle(deck);
-		
+
 	}
-	
+
 	public List<Card> getDeck() {
 		return deck;
 	}
@@ -24,14 +24,9 @@ public class Deck {
 		this.deck = deck;
 	}
 
-	public Card dealCard() {
-		Card c = deck.get(0);
-		deck.remove(0);
-		return c;
-		
-	}
+	
 
-	public void createDeck() {
+	public List<Card> createDeck() {
 		int v = 0;
 		deck = new ArrayList<Card>(52);
 		for (Suit s : Suit.values()) {
@@ -70,10 +65,9 @@ public class Deck {
 
 			}
 		}
-		
-		System.out.println(deck.toString());
-		
-		
+		return deck;
+
+		// System.out.println(deck.toString());
 
 	}
 
@@ -81,7 +75,5 @@ public class Deck {
 	public String toString() {
 		return "Deck [deck=" + deck + "]";
 	}
-	
-	
 
 }
