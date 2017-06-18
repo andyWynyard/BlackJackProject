@@ -2,8 +2,7 @@ package test;
 
 import static org.junit.Assert.*;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 import org.junit.*;
 
@@ -18,6 +17,7 @@ public class DeckTest {
 	@Before
 	public void setUp() throws Exception {
 		deck = new Deck();
+		
 	}
 
 	@After
@@ -27,8 +27,12 @@ public class DeckTest {
 
 	@Test
 	public void testToDealCardFromDeck() {
-//		deck.dealCard(d)
-//			assertEquals(expected, actual);
+		deck.createDeck();
+			assertEquals(52, deck.getDeck().size());
+			assertTrue(deck.getDeck().get(0).getValue() < 12);
+			assertFalse(deck.getDeck().get(0).getValue() < 1);
+			
+
 	}
 
 }

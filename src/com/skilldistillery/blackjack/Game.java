@@ -17,7 +17,8 @@ public class Game {
 		MakeAMove move = new MakeAMove();
 		Scanner keyboard = new Scanner(System.in);
 		d.shuffleDeck();
-	//	System.out.println(d.getDeck().size()); //Check to see if card total is accurate
+		// System.out.println(d.getDeck().size()); //Check to see if card total
+		// is accurate
 		System.out.println("Welcome to BlackJack");
 
 		playerHandCards = playerHandCards + player.addCard(d.getDeck());
@@ -25,10 +26,12 @@ public class Game {
 		playerHandCards = playerHandCards + ", " + player.addCard(d.getDeck());
 		playerHandValue = playerHandValue + player.getPlayerTotalCards();
 		dealerHandValue = dealerHandValue + dealer.getPlayerTotalCards();
-	//	System.out.println("You have " + playerHandCards + " value is " + playerHandValue); //Spot check
+		// System.out.println("You have " + playerHandCards + " value is " +
+		// playerHandValue); //Spot check
 		System.out.println("The dealer has " + dealerHandCards + " and one other card face down.");
 		dealerHandCards = dealerHandCards + ", " + dealer.addCard(d.getDeck());
-		// System.out.println(d.getDeck().size()); // To test for cards coming out of the deck.
+		// System.out.println(d.getDeck().size()); // To test for cards coming
+		// out of the deck.
 
 		if (firstCheckForTwentyOne(dealerHandValue, playerHandValue, dealerHandCards, playerHandCards)) {
 			System.out.println("You have:");
@@ -42,7 +45,8 @@ public class Game {
 				for (Card card : player.getPlayerHand()) {
 					System.out.println(card);
 				}
-				//System.out.println("Player Total: " + player.getPlayerTotalCards());
+				// System.out.println("Player Total: " +
+				// player.getPlayerTotalCards());
 				if (player.getPlayerTotalCards() == 21) {
 					System.out.println("You Win");
 					System.out.println("Dealer had:");
@@ -60,6 +64,7 @@ public class Game {
 				// System.out.println("The dealer has " + dealerHandCards);
 				// System.out.println(d.getDeck().size()); // To test for
 				// cards coming out of the deck.
+				// keyboard.close();
 			}
 			// for (int i = 0; i < dealerHandCards.length(); i++) {
 			// if (dealer.getDealerHand()getPlayerHandCards(i))
@@ -101,7 +106,6 @@ public class Game {
 		else {
 			System.out.println("Game over.");
 		}
-		keyboard.close();
 
 	}
 
