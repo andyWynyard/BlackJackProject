@@ -3,39 +3,39 @@ package com.skilldistillery.blackjack;
 import java.util.*;
 
 public class Dealer {
-	
+
 	private int playerTotalCards = 0;
 	private List<Card> deck;
 	private List<Card> playerHand = new ArrayList<>();
 	private List<Card> dealerHand = new ArrayList<>();
 	private int numCardsInHand = 0;
-	
-	
-	
+
 	public Card addCard(List<Card> d) {
 		Card c = d.get(0);
 		playerTotalCards = playerTotalCards + d.get(0).getValue();
 		numCardsInHand++;
 		d.remove(0);
+		dealerHand.add(c);
 		return c;
 
 	}
-	
-//	public Card dealCard(List<Card> deck) {
-//		Card c = deck.get(0);
-//		deck.remove(0);
-//		return c;
-//
-//	}
-	
-	
 
 	public List<Card> getDeck() {
 		return deck;
 	}
 
 	public int getPlayerTotalCards() {
-		return playerTotalCards;
+		int total = 0;
+		for (Card card : dealerHand) {
+			total += card.getValue();
+		}
+
+		for (Card card : playerHand) {
+			if (card.getRank().equals(Rank.ACE) && total > 21) {
+				total -= 10;
+			}
+		}
+		return total;
 	}
 
 	public void setPlayerTotalCards(int playerTotalCards) {
@@ -69,7 +69,5 @@ public class Dealer {
 	public void setNumCardsInHand(int numCardsInHand) {
 		this.numCardsInHand = numCardsInHand;
 	}
-
-	
 
 }

@@ -59,7 +59,7 @@ public class Deck {
 					v = 2;
 					deck.add(new Card(s, v, r));
 				} else if (r.equals(Rank.ACE)) {
-					v = 1;
+					v = 11;
 					deck.add(new Card(s, v, r));
 				}
 

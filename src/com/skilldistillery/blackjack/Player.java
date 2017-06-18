@@ -13,8 +13,9 @@ public class Player {
 		Card c = d.get(0);
 		playerTotalCards = playerTotalCards + d.get(0).getValue();
 		numCardsInHand++;
+		playerHand.add(c);
 		d.remove(0);
-	
+
 		return c;
 
 	}
@@ -28,10 +29,17 @@ public class Player {
 	}
 
 	public int getPlayerTotalCards() {
-		for (int i = 0; i < getNumCardsInHand(); i++) {
-			
+		int total = 0;
+		for (Card card : playerHand) {
+			total += card.getValue();
 		}
-		return playerTotalCards;
+
+		for (Card card : playerHand) {
+			if (card.getRank().equals(Rank.ACE) && total > 21) {
+				total -= 10;
+			}
+		}
+		return total;
 	}
 
 	public void setPlayerTotalCards(int playerTotalCards) {
