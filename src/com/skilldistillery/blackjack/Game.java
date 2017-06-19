@@ -2,6 +2,16 @@ package com.skilldistillery.blackjack;
 
 import java.util.*;
 
+/**
+ * This is much longer than I wanted it to be. 
+ * The entire game logic is here except for checking for ace,
+ * and for the player to HIT or STAY.
+ * I planned on pulling much of this out and creating 
+ * own classes, however I ran out of time.
+ * @author andrewwynyard
+ *
+ */
+
 public class Game {
 	private String playerHandCards = "";
 	private String dealerHandCards = "";
@@ -17,8 +27,7 @@ public class Game {
 		MakeAMove move = new MakeAMove();
 		Scanner keyboard = new Scanner(System.in);
 		d.shuffleDeck();
-		// System.out.println(d.getDeck().size()); //Check to see if card total
-		// is accurate
+
 		System.out.println("Welcome to BlackJack");
 
 		playerHandCards = playerHandCards + player.addCard(d.getDeck());
@@ -26,12 +35,9 @@ public class Game {
 		playerHandCards = playerHandCards + ", " + player.addCard(d.getDeck());
 		playerHandValue = playerHandValue + player.getPlayerTotalCards();
 		dealerHandValue = dealerHandValue + dealer.getPlayerTotalCards();
-		// System.out.println("You have " + playerHandCards + " value is " +
-		// playerHandValue); //Spot check
+
 		System.out.println("The dealer has " + dealerHandCards + " and one other card face down.");
 		dealerHandCards = dealerHandCards + ", " + dealer.addCard(d.getDeck());
-		// System.out.println(d.getDeck().size()); // To test for cards coming
-		// out of the deck.
 
 		if (firstCheckForTwentyOne(dealerHandValue, playerHandValue, dealerHandCards, playerHandCards)) {
 			System.out.println("You have:");
@@ -45,8 +51,7 @@ public class Game {
 				for (Card card : player.getPlayerHand()) {
 					System.out.println(card);
 				}
-				// System.out.println("Player Total: " +
-				// player.getPlayerTotalCards());
+
 				if (player.getPlayerTotalCards() == 21) {
 					System.out.println("You Win");
 					System.out.println("Dealer had:");
@@ -59,16 +64,9 @@ public class Game {
 					System.out.println("You Bust");
 					return;
 				}
-				// System.out.println("You have " + playerHandCards + "
-				// value is " + playerHandValue);
-				// System.out.println("The dealer has " + dealerHandCards);
-				// System.out.println(d.getDeck().size()); // To test for
-				// cards coming out of the deck.
-				// keyboard.close();
+
 			}
-			// for (int i = 0; i < dealerHandCards.length(); i++) {
-			// if (dealer.getDealerHand()getPlayerHandCards(i))
-			// }
+
 			while (dealer.getPlayerTotalCards() < 17) {
 				dealerHandCards = dealerHandCards + ", " + dealer.addCard(d.getDeck());
 				dealerHandValue = dealerHandValue + dealer.getPlayerTotalCards();
@@ -78,30 +76,13 @@ public class Game {
 					return;
 				}
 
-				// System.out.println("You have " + playerHandCards + "
-				// value is " + playerHandValue);
-				// System.out.println("The dealer has " +
-				// dealerHandCards);
-				// System.out.println(d.getDeck().size()); // To test
-				// for cards coming out of the deck.
-
-				// } else {
-				// System.out.println("You have " + playerHandCards);
-				// System.out.println("The dealer has " +
-				// dealerHandCards);
 			}
-			// else {
-			// System.out.println(dealerHandCards);
-			// }
+
 			System.out.println("Dealer: " + dealer.getPlayerTotalCards());
 			System.out.println("Player: " + player.getPlayerTotalCards());
 			checkForTwentyOne(player.getPlayerTotalCards(), dealer.getPlayerTotalCards(), dealerHandCards,
 					playerHandCards);
 		}
-		// } while (checkForTwentyOne(dealerHandValue, playerHandValue,
-		// dealerHandCards, playerHandCards));
-		// } while (checkForTwentyOne( player.getPlayerTotalCards(),
-		// dealer.getPlayerTotalCards(), dealerHandCards, playerHandCards));
 
 		else {
 			System.out.println("Game over.");

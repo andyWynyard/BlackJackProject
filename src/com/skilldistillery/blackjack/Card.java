@@ -1,5 +1,15 @@
 package com.skilldistillery.blackjack;
 
+/**
+ * Simple card class. Integrated value variable
+ * for assignment. Was thinking about coupling, and 
+ * with the values being a variable, if a new deck is 
+ * created for another type of game, 
+ * different values could be passed.
+ * @author andrewwynyard
+ *
+ */
+
 public class Card {
 
 	private Suit suit;

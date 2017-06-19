@@ -3,6 +3,14 @@ package com.skilldistillery.blackjack;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Player class tests for an ace also. 
+ * If an ace is present, and the player is over
+ * 21, then the ace is set to 1 from 11.
+ * @author andrewwynyard
+ *
+ */
+
 public class Player {
 	// private int handTotalVals;
 	private int playerTotalCards = 0;

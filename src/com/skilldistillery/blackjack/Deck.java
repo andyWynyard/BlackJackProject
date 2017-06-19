@@ -4,6 +4,15 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * This class creates a deck for the BlackJack game
+ * The card values are assigned at creation time for the 
+ * blackjack game. Another deck method could be created 
+ * for another type of game.
+ * @author andrewwynyard
+ *
+ */
+
 public class Deck {
 	List<Card> deck;
 

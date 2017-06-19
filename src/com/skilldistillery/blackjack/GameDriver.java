@@ -2,6 +2,14 @@ package com.skilldistillery.blackjack;
 
 import java.util.Scanner;
 
+/**
+ * This loops through the game if you 
+ * would like to. However I made it so that
+ * a new deck is used every time for ease.
+ * @author andrewwynyard
+ *
+ */
+
 public class GameDriver {
 
 	public static void main(String[] args) {

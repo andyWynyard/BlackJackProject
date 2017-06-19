@@ -2,6 +2,16 @@ package com.skilldistillery.blackjack;
 
 import java.util.*;
 
+/**
+ * This is similar to the player class, and actually these 
+ * should be merged/used for the same thing.
+ * This also checks for an ace and makes the appropriate 
+ * changes if needed.
+ * 
+ * @author andrewwynyard
+ *
+ */
+
 public class Dealer {
 
 	private int playerTotalCards = 0;

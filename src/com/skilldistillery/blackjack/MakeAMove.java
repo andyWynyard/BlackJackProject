@@ -2,6 +2,14 @@ package com.skilldistillery.blackjack;
 
 import java.util.Scanner;
 
+/**
+ * Simple HIT or STAY method here, and I wanted
+ * to make this sort of thing more common, 
+ * but I ran out of time.
+ * @author andrewwynyard
+ *
+ */
+
 public class MakeAMove {
 	Scanner keyboard = new Scanner(System.in);
 
