@@ -21,9 +21,11 @@ public class Game {
 	private Dealer dealer = new Dealer();
 
 	public void play() {
+		
+		/*New game for you to play
+		sets everything up*/
 
 		Deck d = new Deck();
-
 		MakeAMove move = new MakeAMove();
 		Scanner keyboard = new Scanner(System.in);
 		d.shuffleDeck();
@@ -38,6 +40,9 @@ public class Game {
 
 		System.out.println("The dealer has " + dealerHandCards + " and one other card face down.");
 		dealerHandCards = dealerHandCards + ", " + dealer.addCard(d.getDeck());
+		
+		/*Wanted to check for initial blackjack
+		You never know, and it happens often actually*/
 
 		if (firstCheckForTwentyOne(dealerHandValue, playerHandValue, dealerHandCards, playerHandCards)) {
 			System.out.println("You have:");
@@ -89,6 +94,7 @@ public class Game {
 		}
 
 	}
+	//Method for first check
 
 	public boolean firstCheckForTwentyOne(int dealerHandValue, int playerHandValue, String dealerHandCards,
 			String playerHandCards) {
@@ -112,6 +118,9 @@ public class Game {
 		}
 		return true;
 	}
+	
+	/*This is the main check block for 21,
+	and has a bit of Swedish in it.*/
 
 	public boolean checkForTwentyOne(int playerHandValue, int dealerHandValue, String dealerHandCards,
 			String playerHandCards) {
